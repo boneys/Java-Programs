@@ -1,24 +1,29 @@
+/* * 
+   * ClassName : WordGame
+      Reads a Character from User,Checks its occurence. Points are rewarded for correct guess and penalty for wrong one.          
+   * @Version  1.0.6_24
+   * @Author   Boney S
+   */
+   
 import java.io.*;
 import java.util.Scanner;
 
-class WirdGame
+class WordGame
 {
 
     public static void main(String[] abc)
-    {
-
-        Scanner myscan=new Scanner(System.in);
+    {        
         final String mast="UNIVERSAL";
-        int count=3;
-        int point=100;
-        boolean flag;            
+        int count=3,point=100;    
         String ch;
         char choice=' ';
+        
+        Scanner myscan=new Scanner(System.in);        
 
         System.out.println("                Welcome to Word Game             ");
-        System.out.println("                 --------------------            ");
+        System.out.println("                --------------------            ");
 
-
+        //Loop for reading charcters from user and checks it. 3 wrong guess are allowed
         do
         {
             if(count > 0 && point > 0)
@@ -26,9 +31,9 @@ class WirdGame
 
                 System.out.println("Try your Luck by Guessing a Character -- You Have   : " + count);
                 ch=myscan.next();
-
-                flag=mast.contains(ch);
-                if(flag)
+                
+                //Checking occurence
+                if(mast.contains(ch))
                 {
                     System.out.println(" Correct you are Rewarded 10 Points ");
                     point+=10;
@@ -48,13 +53,11 @@ class WirdGame
             }
 
             System.out.println("\n Do you Want to continue...........Y Or N");
-
-            //choice=myscan.nextLine();
+        
             try {
                 choice=(char)System.in.read();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                               e.printStackTrace();
             }
 
         }while(choice != 'N');
