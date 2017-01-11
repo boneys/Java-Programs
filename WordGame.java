@@ -14,7 +14,7 @@ class WordGame
     public static void main(String[] abc)
     {        
         final String mast="UNIVERSAL";
-        int count=3,point=100;    
+        int count=3,point=200;    
         String ch;
         char choice=' ';
         
